@@ -30,15 +30,14 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity Multiplier is
-    Port ( A : in  STD_LOGIC_VECTOR (11 downto 0);
-           B : in  STD_LOGIC_VECTOR (3 downto 0);
-           C : out  STD_LOGIC_VECTOR (15 downto 0));
+    Port ( A : in  STD_LOGIC_VECTOR (15 downto 0);
+           B : in  STD_LOGIC_VECTOR (15 downto 0);
+           C : out  STD_LOGIC_VECTOR (31 downto 0));
 end Multiplier;
 
 architecture Behavioral of Multiplier is
 
 begin
-	c <= std_logic_vector(signed(A)*signed(B));
-
+		c <= std_logic_vector(signed(A)*signed(B));
 end Behavioral;
 

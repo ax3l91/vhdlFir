@@ -30,15 +30,16 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity Adder is
-    Port ( A : in  STD_LOGIC_VECTOR (15 downto 0);
-           B : in  STD_LOGIC_VECTOR (15 downto 0);
-           C : out  STD_LOGIC_VECTOR (15 downto 0));
+	 generic (BITS: integer);
+    Port (
+			  A : in  STD_LOGIC_VECTOR (bits-1 downto 0);
+           B : in  STD_LOGIC_VECTOR (bits-1 downto 0);
+           C : out  STD_LOGIC_VECTOR (bits-1 downto 0));
 end Adder;
 
 architecture Behavioral of Adder is
 
 begin
-	c <= std_logic_vector(signed(A)+signed(B));
-
+			c <= std_logic_vector(signed(A)+signed(B));
 end Behavioral;
 
